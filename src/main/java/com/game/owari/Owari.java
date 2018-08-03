@@ -1,10 +1,6 @@
 package com.game.owari;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class Owari
 {
     public static void main( String[] args )
     {
