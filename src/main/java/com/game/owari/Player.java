@@ -5,7 +5,10 @@ public class Player {
     private int points;
 
     public int getScore() {
-        points = 0;
         return points;
+    }
+
+    public void addToScore(int pointsToAdd) {
+        points =+ pointsToAdd;
     }
 }
