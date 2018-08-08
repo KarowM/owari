@@ -1,10 +1,11 @@
 package com.game.owari;
 
 public class Bowl {
-    private int numOfBalls;
+    private int numOfStones;
+    private int despositedStones;
 
     public Bowl(int initialBalls) {
-        numOfBalls = initialBalls;
+        numOfStones = initialBalls;
     }
 
     public Bowl() {
@@ -12,19 +13,28 @@ public class Bowl {
     }
 
     public int getStones() {
-        return numOfBalls;
+        return numOfStones;
     }
 
     public int takeAllStones() {
-        final int ballsInBowl = numOfBalls;
-        numOfBalls = 0;
+        final int ballsInBowl = numOfStones;
+        numOfStones = 0;
         return ballsInBowl;
     }
 
-    public void depositStone(int zero) {
+    public void depositStone(int stones) {
+        despositedStones += stones;
     }
 
     public int updateAndGetScore() {
+        if (numOfStones == 1) {
+            final int points = despositedStones;
+            numOfStones += despositedStones;
+            despositedStones = 0;
+            return points;
+        }
+        numOfStones += despositedStones;
+        despositedStones = 0;
         return 0;
     }
 }
