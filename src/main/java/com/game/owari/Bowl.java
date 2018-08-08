@@ -22,8 +22,8 @@ public class Bowl {
         return ballsInBowl;
     }
 
-    public void depositStone(int stones) {
-        despositedStones += stones;
+    public void depositStone() {
+        despositedStones += 1;
     }
 
     public int updateAndGetScore() {

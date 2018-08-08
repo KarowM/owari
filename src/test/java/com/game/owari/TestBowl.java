@@ -49,7 +49,7 @@ public class TestBowl {
     public void depositZeroStoneDoesNotUpdateBallsInBowl()
     {
         int ballsBefore = BOWL.getStones();
-        BOWL.depositStone(ZERO);
+        BOWL.depositStone();
 
         Assert.assertEquals(BOWL.getStones(), ballsBefore);
     }
@@ -58,7 +58,7 @@ public class TestBowl {
     public void depositNonZeroStoneDoesNotUpdateBallsInBowl()
     {
         int ballsBefore = BOWL.getStones();
-        BOWL.depositStone(ONE);
+        BOWL.depositStone();
 
         Assert.assertEquals(BOWL.getStones(), ballsBefore);
     }
@@ -69,18 +69,11 @@ public class TestBowl {
         Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
     }
 
-    @Test
-    public void depositZeroThenUpdateAndGetStoreReturnsZero()
-    {
-        BOWL.depositStone(ZERO);
-
-        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
-    }
 
     @Test
     public void depositStoneInEmptyBowlThenUpdateAndGetScoreReturnsZero()
     {
-        BOWL.depositStone(ONE);
+        BOWL.depositStone();
 
         Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
     }
@@ -89,7 +82,7 @@ public class TestBowl {
     public void depositStoneOnceInBowlWithOneStoneThenUpdateAndGetScoreReturnsOne()
     {
         BOWL = new Bowl(ONE);
-        BOWL.depositStone(ONE);
+        BOWL.depositStone();
 
         Assert.assertEquals(BOWL.updateAndGetScore(), ONE);
     }
