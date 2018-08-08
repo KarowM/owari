@@ -18,7 +18,7 @@ public class PlayerTest
     @Test
     public void getScoreIsZeroAtStart()
     {
-        Assert.assertEquals(PLAYER.getScore(), 0);
+        Assert.assertEquals(0, PLAYER.getScore());
     }
 
     @Test
@@ -26,6 +26,6 @@ public class PlayerTest
     {
         PLAYER.addToScore(pointsToAdd);
 
-        Assert.assertEquals(PLAYER.getScore(), pointsToAdd);
+        Assert.assertEquals(pointsToAdd, PLAYER.getScore());
     }
 }

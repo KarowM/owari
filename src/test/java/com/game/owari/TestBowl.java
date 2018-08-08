@@ -20,7 +20,7 @@ public class TestBowl {
     @Test
     public void bowlCreationWithNoArgsCreatesEmptyBowl()
     {
-        Assert.assertEquals(BOWL.getStones(), 0);
+        Assert.assertEquals(ZERO, BOWL.getStones());
     }
 
     @Test
@@ -28,13 +28,13 @@ public class TestBowl {
     {
         BOWL = new Bowl(ONE);
 
-        Assert.assertEquals(BOWL.getStones(), ONE);
+        Assert.assertEquals(ONE, BOWL.getStones());
     }
 
     @Test
     public void takeAllStonesFromEmptyBowlReturnsZero()
     {
-        Assert.assertEquals(BOWL.takeAllStones(), 0);
+        Assert.assertEquals(ZERO, BOWL.takeAllStones());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TestBowl {
     {
         BOWL = new Bowl(ONE);
 
-        Assert.assertEquals(BOWL.takeAllStones(), ONE);
+        Assert.assertEquals(ONE, BOWL.takeAllStones());
     }
 
     @Test
@@ -51,7 +51,7 @@ public class TestBowl {
         int ballsBefore = BOWL.getStones();
         BOWL.depositStone();
 
-        Assert.assertEquals(BOWL.getStones(), ballsBefore);
+        Assert.assertEquals(ballsBefore, BOWL.getStones());
     }
 
     @Test
@@ -60,13 +60,13 @@ public class TestBowl {
         int ballsBefore = BOWL.getStones();
         BOWL.depositStone();
 
-        Assert.assertEquals(BOWL.getStones(), ballsBefore);
+        Assert.assertEquals(ballsBefore, BOWL.getStones());
     }
 
     @Test
     public void updateAndGetStoreReturnsZeroFromEmptyBowl()
     {
-        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
+        Assert.assertEquals(ZERO, BOWL.updateAndGetScore());
     }
 
 
@@ -75,7 +75,7 @@ public class TestBowl {
     {
         BOWL.depositStone();
 
-        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
+        Assert.assertEquals(ZERO, BOWL.updateAndGetScore());
     }
 
     @Test
@@ -84,7 +84,7 @@ public class TestBowl {
         BOWL = new Bowl(2);
         BOWL.depositStone();
 
-        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
+        Assert.assertEquals(ZERO, BOWL.updateAndGetScore());
     }
 
     @Test
@@ -93,18 +93,17 @@ public class TestBowl {
         BOWL = new Bowl(ONE);
         BOWL.depositStone();
 
-        Assert.assertEquals(BOWL.updateAndGetScore(), ONE);
+        Assert.assertEquals(ONE, BOWL.updateAndGetScore());
     }
 
     @Test
     public void depositStoneThriceInBowlWithOneStoneThenUpdateAndGetScoreReturnsThree()
     {
-        final int three = 3;
         BOWL = new Bowl(ONE);
         BOWL.depositStone();
         BOWL.depositStone();
         BOWL.depositStone();
 
-        Assert.assertEquals(BOWL.updateAndGetScore(), three);
+        Assert.assertEquals(3, BOWL.updateAndGetScore());
     }
 }
