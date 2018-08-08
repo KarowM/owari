@@ -1,18 +1,25 @@
 package com.game.owari;
 
 public class Game {
-    private int currentPlayer;
+
+    public static enum PLAYER
+    {
+        PLAYER_ONE,
+        PLAYER_TWO
+    }
+
+    private PLAYER currentPlayer;
 
     public Game()
     {
-        currentPlayer = 1;
+        currentPlayer = PLAYER.PLAYER_ONE;
     }
 
-    public int getCurrentPlayer() {
+    public PLAYER getCurrentPlayer() {
         return currentPlayer;
     }
 
     public void swapPlayers() {
-        currentPlayer = 3 - currentPlayer;
+        currentPlayer = currentPlayer == PLAYER.PLAYER_ONE ? PLAYER.PLAYER_TWO : PLAYER.PLAYER_ONE;
     }
 }

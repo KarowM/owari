@@ -17,7 +17,7 @@ public class TestGame {
     @Test
     public void gameStartsWithPlayerOne()
     {
-        Assert.assertEquals(1, game.getCurrentPlayer());
+        Assert.assertEquals(Game.PLAYER.PLAYER_ONE, game.getCurrentPlayer());
     }
 
     @Test
@@ -25,7 +25,7 @@ public class TestGame {
     {
         game.swapPlayers();
 
-        Assert.assertEquals(2, game.getCurrentPlayer());
+        Assert.assertEquals(Game.PLAYER.PLAYER_TWO, game.getCurrentPlayer());
     }
 
     @Test
@@ -34,6 +34,6 @@ public class TestGame {
         game.swapPlayers();
         game.swapPlayers();
 
-        Assert.assertEquals(1, game.getCurrentPlayer());
+        Assert.assertEquals(Game.PLAYER.PLAYER_ONE, game.getCurrentPlayer());
     }
 }
