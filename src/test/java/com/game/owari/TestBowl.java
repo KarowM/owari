@@ -68,4 +68,12 @@ public class TestBowl {
     {
         Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
     }
+
+    @Test
+    public void depositZeroThenUpdateAndGetStoreReturnsZero()
+    {
+        BOWL.depositStone(ZERO);
+
+        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
+    }
 }
