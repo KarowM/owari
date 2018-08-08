@@ -6,8 +6,10 @@ import org.junit.Test;
 
 public class TestBowl {
 
+    public static final int ZERO = 0;
+    public static final int ONE = 1;
+
     private static Bowl BOWL;
-    public static final int INITIAL_BALLS = 1;
 
     @Before
     public void setup()
@@ -24,9 +26,9 @@ public class TestBowl {
     @Test
     public void bowlCreationWithArgsCreatesBowlWithSpecifiedNumberOfBalls()
     {
-        BOWL = new Bowl(INITIAL_BALLS);
+        BOWL = new Bowl(ONE);
 
-        Assert.assertEquals(BOWL.getStones(), INITIAL_BALLS);
+        Assert.assertEquals(BOWL.getStones(), ONE);
     }
 
     @Test
@@ -38,8 +40,26 @@ public class TestBowl {
     @Test
     public void takeAllStonesFromNonEmptyBowlReturnsNumberOfBallsInBowl()
     {
-        BOWL = new Bowl(INITIAL_BALLS);
+        BOWL = new Bowl(ONE);
 
-        Assert.assertEquals(BOWL.takeAllStones(), INITIAL_BALLS);
+        Assert.assertEquals(BOWL.takeAllStones(), ONE);
+    }
+
+    @Test
+    public void depositZeroStoneDoesNotUpdateBallsInBowl()
+    {
+        int ballsBefore = BOWL.getStones();
+        BOWL.depositStone(ZERO);
+
+        Assert.assertEquals(BOWL.getStones(), ballsBefore);
+    }
+
+    @Test
+    public void depositNonZeroStoneDoesNotUpdateBallsInBowl()
+    {
+        int ballsBefore = BOWL.getStones();
+        BOWL.depositStone(ONE);
+
+        Assert.assertEquals(BOWL.getStones(), ballsBefore);
     }
 }

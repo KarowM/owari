@@ -20,4 +20,11 @@ public class Bowl {
         numOfBalls = 0;
         return ballsInBowl;
     }
+
+    public void depositStone(int zero) {
+    }
+
+    public int updateAndGetScore() {
+        return 0;
+    }
 }
