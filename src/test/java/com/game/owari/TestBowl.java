@@ -79,6 +79,15 @@ public class TestBowl {
     }
 
     @Test
+    public void depositStoneInBowlWithTwoStonesThenUpdateAndGetScoreReturnsZero()
+    {
+        BOWL = new Bowl(2);
+        BOWL.depositStone();
+
+        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
+    }
+
+    @Test
     public void depositStoneOnceInBowlWithOneStoneThenUpdateAndGetScoreReturnsOne()
     {
         BOWL = new Bowl(ONE);
