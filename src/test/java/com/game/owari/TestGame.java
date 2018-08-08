@@ -27,4 +27,13 @@ public class TestGame {
 
         Assert.assertEquals(2, game.getCurrentPlayer());
     }
+
+    @Test
+    public void swapPlayerTwiceSwitchesStayAtPlayerOne()
+    {
+        game.swapPlayers();
+        game.swapPlayers();
+
+        Assert.assertEquals(1, game.getCurrentPlayer());
+    }
 }

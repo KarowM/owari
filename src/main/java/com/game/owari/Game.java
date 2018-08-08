@@ -13,6 +13,6 @@ public class Game {
     }
 
     public void swapPlayers() {
-        currentPlayer = 2;
+        currentPlayer = 3 - currentPlayer;
     }
 }
