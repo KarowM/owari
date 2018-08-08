@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class PlayerTest
 {
-    public static final int pointsToAdd = 1;
     private static Player PLAYER;
 
     @Before
@@ -24,6 +23,7 @@ public class PlayerTest
     @Test
     public void addToScoreAddsToPlayerScore()
     {
+        int pointsToAdd = 1;
         PLAYER.addToScore(pointsToAdd);
 
         Assert.assertEquals(pointsToAdd, PLAYER.getScore());
