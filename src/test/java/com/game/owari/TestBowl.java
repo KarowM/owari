@@ -28,4 +28,10 @@ public class TestBowl {
 
         Assert.assertEquals(BOWL.getStones(), INITIAL_BALLS);
     }
+
+    @Test
+    public void takeAllStonesFromEmptyBowlReturnsZero()
+    {
+        Assert.assertEquals(BOWL.takeAllStones(), 0);
+    }
 }

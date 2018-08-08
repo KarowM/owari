@@ -14,4 +14,8 @@ public class Bowl {
     public int getStones() {
         return numOfBalls;
     }
+
+    public int takeAllStones() {
+        return 0;
+    }
 }
