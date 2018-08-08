@@ -86,4 +86,16 @@ public class TestBowl {
 
         Assert.assertEquals(BOWL.updateAndGetScore(), ONE);
     }
+
+    @Test
+    public void depositStoneThriceInBowlWithOneStoneThenUpdateAndGetScoreReturnsThree()
+    {
+        final int three = 3;
+        BOWL = new Bowl(ONE);
+        BOWL.depositStone();
+        BOWL.depositStone();
+        BOWL.depositStone();
+
+        Assert.assertEquals(BOWL.updateAndGetScore(), three);
+    }
 }
