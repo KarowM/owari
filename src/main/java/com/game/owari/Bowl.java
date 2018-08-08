@@ -1,7 +1,7 @@
 package com.game.owari;
 
 public class Bowl {
-    private final int numOfBalls;
+    private int numOfBalls;
 
     public Bowl(int initialBalls) {
         numOfBalls = initialBalls;
@@ -16,6 +16,8 @@ public class Bowl {
     }
 
     public int takeAllStones() {
-        return 0;
+        final int ballsInBowl = numOfBalls;
+        numOfBalls = 0;
+        return ballsInBowl;
     }
 }
