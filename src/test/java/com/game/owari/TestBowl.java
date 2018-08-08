@@ -62,4 +62,10 @@ public class TestBowl {
 
         Assert.assertEquals(BOWL.getStones(), ballsBefore);
     }
+
+    @Test
+    public void updateAndGetStoreReturnsZeroFromEmptyBowl()
+    {
+        Assert.assertEquals(BOWL.updateAndGetScore(), ZERO);
+    }
 }
